@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+data:
+  LD_CONTAINER_NAME: linkding 
+  LD_HOST_PORT: "9090"
+  LD_HOST_DATA_DIR: /etc/linkding/data
