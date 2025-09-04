@@ -7,9 +7,9 @@ metadata:
   namespace: linkding
 spec:
   securityContext:
+    fsGroup: 33
     runAsUser: 33
     runAsGroup: 33
-    supplementalGroups: [33]
   replicas: 1
   selector:
     matchLabels:
@@ -24,6 +24,10 @@ spec:
           name: linkding
           ports: 
             - containerPort: 9090
+
+          securityContext:
+            allowPrivilegeEscalation: false  
+
           volumeMounts:
             - mountPath: /etc/linkding/data
               name: linkding-data
@@ -31,3 +35,4 @@ spec:
         - name: linkding-data
           persistentVolumeClaim:
             claimName: linkding-data-pvc
+            
