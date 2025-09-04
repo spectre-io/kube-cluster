@@ -6,6 +6,10 @@ metadata:
   name: linkding
   namespace: linkding
 spec:
+  securityContext:
+    runAsUser: 33
+    runAsGroup: 33
+    supplementalGroups: [33]
   replicas: 1
   selector:
     matchLabels:
