@@ -6,3 +6,6 @@ data:
   LD_CONTAINER_NAME: linkding 
   LD_HOST_PORT: "9090"
   LD_HOST_DATA_DIR: /etc/linkding/data
+  LD_SUPERUSER_NAME: josh
+  LD_SUPERUSER_PASSWORD: SuperSecurePassword1
+  
