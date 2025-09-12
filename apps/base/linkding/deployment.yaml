@@ -5,11 +5,6 @@ metadata:
     app: linkding
   name: linkding
   namespace: linkding
-spec:
-  securityContext:
-    fsGroup: 33
-    runAsUser: 33
-    runAsGroup: 33
   replicas: 1
   selector:
     matchLabels:
