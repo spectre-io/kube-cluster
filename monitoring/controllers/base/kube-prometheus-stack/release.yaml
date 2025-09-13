@@ -29,39 +29,11 @@ spec:
     grafana:
       adminPassword: josh
 
-    ingress:
-      enabled: true
-
-      ingressClassName: "traefik"
-
-      annotations: {}
-
-      labels: {}
-
-    ## Override ingress to a different defined port on the service
-      servicePort: 3000
-    ## Override ingress to a different service then the default, this is useful if you need to
-    ## point to a specific instance of the alertmanager (eg kube-prometheus-stack-alertmanager-0)
-      serviceName: kube-prometheus-stack-operator
-
-    ## Hosts must be provided if Ingress is enabled.
-    ##
-      hosts: []
-       - grafana.kerrbo.cloud
-
-    ## Paths to use for ingress rules - one path should match the alertmanagerSpec.routePrefix
-    ##
-      paths: []
-       - /
-
-    ## For Kubernetes >= 1.18 you should specify the pathType (determines how Ingress paths should be matched)
-    ## See https://kubernetes.io/blog/2020/04/02/improvements-to-the-ingress-api-in-kubernetes-1.18/#better-path-matching-with-path-types
-    # pathType: ImplementationSpecific
-
-    ## TLS configuration for Alertmanager Ingress
-    ## Secret must be manually created in the namespace
-    ##
-      tls: []
-    # - secretName: alertmanager-general-tls
-    #   hosts:
-    #   - alertmanager.example.com
+    gateway:
+      # -- Gateway namespace
+      ##
+      namespace: "monitoring"
+      # -- Gateway pod labels
+      ##
+      podLabels: {}
+        app.kubernetes.io/name: ingress-traefik
