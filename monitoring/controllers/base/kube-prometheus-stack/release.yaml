@@ -28,12 +28,14 @@ spec:
   values:
     grafana:
       adminPassword: josh
+      ingress:
+        enabled: true
+        ingressClassName: "traefik"
 
-    gateway:
-      # -- Gateway namespace
-      ##
-      namespace: "monitoring"
-      # -- Gateway pod labels
-      ##
-      podLabels: {}
-        app.kubernetes.io/name: ingress-traefik
+        hosts:
+          - grafana.kerrbo.cloud
+
+        tls:
+          - secretName: grafana-tls-secret
+            hosts:
+              - grafana.kerrbo.cloud
