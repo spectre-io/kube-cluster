@@ -34,12 +34,24 @@ spec:
             - mountPath: ./config
               name: audio-data
             - mountPath: ./metadata
-              name: audio-data
+              name: audio-metadata
             - mountPath: /usr/share/audiobooks
-              name: audio-data
+              name: audio-audiobooks
             - mountPath: /usr/share/podcasts
-              name: audio-data
+              name: audio-podcasts
+
+      restartPolicy: Always
+
       volumes:
         - name: audio-data
           persistentVolumeClaim:
             claimName: audio-data-pvc
+        - name: audio-metadata
+          persistentVolumeClaim:
+            claimName: audio-metadata-pvc
+        - name: audio-audiobooks
+          persistentVolumeClaim:
+            claimName: audio-audiobooks-pvc
+        - name: audio-podcasts
+          persistentVolumeClaim:
+            claimName: audio-podcasts-pvc
