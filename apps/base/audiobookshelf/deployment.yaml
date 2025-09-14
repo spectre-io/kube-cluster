@@ -35,11 +35,11 @@ spec:
             - mountPath: /config
               name: audio-data
             - mountPath: /metadata
-              name: audio-data
+              name: audio-metadata
             - mountPath: /audiobooks
-              name: audio-data
+              name: audio-books
             - mountPath: /podcasts
-              name: audio-data
+              name: audio-podcasts
 
       restartPolicy: Always
 
@@ -47,4 +47,13 @@ spec:
         - name: audio-data
           persistentVolumeClaim:
             claimName: audio-data-pvc
+        - name: audio-metadata
+          persistentVolumeClaim:
+            claimName: audio-metadata-pvc
+        - name: audio-books
+          persistentVolumeClaim:
+            claimName: audio-books-pvc
+        - name: audio-podcasts
+          persistentVolumeClaim:
+            claimName: audio-podcasts-pvc
 
