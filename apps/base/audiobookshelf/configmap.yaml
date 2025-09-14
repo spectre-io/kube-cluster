@@ -3,10 +3,11 @@ kind: ConfigMap
 metadata:
   name: audio-configmap
   namespace: audiobookshelf
-service:
-  type: ClusterIP
+spec:
   ports:
-    app:
-      port: 3005
+  - port: 3005
+    protocol: TCP
+    targetPort: 3005
+  type: ClusterIP
 data:
   TZ: Europe/London
