@@ -31,13 +31,13 @@ spec:
             allowPrivilegeEscalation: false
 
           volumeMounts:
-            - mountPath: ./config
+            - mountPath: /config
               name: audio-data
-            - mountPath: ./metadata
+            - mountPath: /metadata
               name: audio-metadata
-            - mountPath: /usr/share/audiobooks
+            - mountPath: /audiobooks
               name: audio-audiobooks
-            - mountPath: /usr/share/podcasts
+            - mountPath: /podcasts
               name: audio-podcasts
 
       restartPolicy: Always
