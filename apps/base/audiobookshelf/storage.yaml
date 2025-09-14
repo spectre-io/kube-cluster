@@ -20,24 +20,25 @@ spec:
     requests:
       storage: 100Mi
 ---
-apiversion: v1
+apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: audio-books-pvc
 spec:
-  accessmodes:
-    - readwriteonce
+  accessModes:
+    - ReadWriteOnce
   resources:
     requests:
-      storage: 100mi
+      storage: 100Mi
 ---
-apiversion: v1
+apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: audio-podcasts-pvc
 spec:
-  accessmodes:
-    - readwriteonce
+  accessModes:
+    - ReadWriteOnce
   resources:
     requests:
-      storage: 100mi
+      storage: 100Mi
+
