@@ -10,7 +10,7 @@ spec:
       storage: 100Mi
 ---
 apiversion: v1
-kind: persistentvolumeclaim
+kind: PersistentVolumeClaim
 metadata:
   name: audio-metadata-pvc
 spec:
@@ -21,7 +21,7 @@ spec:
       storage: 100mi
 ---
 apiversion: v1
-kind: persistentvolumeclaim
+kind: PersistentVolumeClaim
 metadata:
   name: audio-books-pvc
 spec:
@@ -32,7 +32,7 @@ spec:
       storage: 100mi
 ---
 apiversion: v1
-kind: persistentvolumeclaim
+kind: PersistentVolumeClaim
 metadata:
   name: audio-podcasts-pvc
 spec:
