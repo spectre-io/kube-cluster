@@ -1,8 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  labels:
-    app: audiobookshelf
   name: audiobookshelf
   namespace: audiobookshelf
 spec:
@@ -10,7 +8,6 @@ spec:
   selector:
     matchLabels:
       app: audiobookshelf
-  type: CLusterIP
   template:
     metadata:
       labels:
@@ -23,6 +20,10 @@ spec:
           envFrom:
             - configMapRef:
                 name: audio-configmap
+          
+          ports:
+            - containerPort: 3005
+              protocol: TCP
 
           securityContext:
             fsGroup: 1000
