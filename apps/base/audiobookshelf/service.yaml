@@ -1,0 +1,11 @@
+apiVesion: v1
+kind: Service
+metadata:
+  labels:
+    app: audiobookshelf
+  name: audiobookshelf
+  namespace: audiobookshelf
+spec:
+  selector:
+    app: audiobookshelf
+  type: ClusterIP 
