@@ -3,9 +3,6 @@ kind: ConfigMap
 metadata:
   name: audio-configmap
   namespace: audiobookshelf
-spec:
-  containers:
-    ports:
-      - containerPort: 3005
 data:
+  PORT: "3005"
   TZ: Europe/London
