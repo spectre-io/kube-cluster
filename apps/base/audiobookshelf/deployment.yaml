@@ -23,6 +23,12 @@ spec:
             - configMapRef:
                 name: audio-configmap
 
+          securityContext:
+            fsGroup: 1000
+            runAsUser: 1000
+            runAsGroup: 1000
+            allowPrivilegeEscalation: false
+
           volumeMounts:
             - mountPath: ./config
               name: audio-data
