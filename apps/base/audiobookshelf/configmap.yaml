@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: audio-configmap
+  namespace: audiobookshelf
+service:
+  type: ClusterIP
+  ports:
+    app:
+      port: 3005
+data:
+  TZ: Europe/London
