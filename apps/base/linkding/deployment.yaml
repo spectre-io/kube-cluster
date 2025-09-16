@@ -33,6 +33,9 @@ spec:
           volumeMounts:
             - mountPath: /etc/linkding/data
               name: linkding-data
+
+      restartPolicy: Always
+
       volumes:
         - name: linkding-data
           persistentVolumeClaim:
