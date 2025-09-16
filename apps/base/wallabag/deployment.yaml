@@ -13,14 +13,14 @@ spec:
         app: wallabag
     spec:
       containers:
-        - image: ghcr.io/wallabag/wallabag:2.6.13
+        - image: ghcr.io/wallabag/wallabag-2.6.13
           name: wallabag
           ports: 
             - containerPort: 7676
 
           envFrom:
-            # - configMapRef:
-            #     name: wallabag-configmap
+             - configMapRef:
+                 name: wallabag-configmap
             #- secretRef:
             #    name: 
 
