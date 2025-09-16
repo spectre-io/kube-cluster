@@ -3,3 +3,6 @@ kind: Kustomization
 namespace: wallabag
 resources:
   - ../../base/wallabag/
+  - cloudflare.yaml
+  - cloudflare-secret.yaml
+  - configmap.yaml
