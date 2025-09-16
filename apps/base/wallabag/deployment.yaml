@@ -13,7 +13,7 @@ spec:
         app: wallabag
     spec:
       containers:
-        - image: ghcr.io/wallabag/docker:2.6.10
+        - image: ghcr.io/wallabag/docker:2.6.13
           name: wallabag
           ports:
             - containerPort: 80
