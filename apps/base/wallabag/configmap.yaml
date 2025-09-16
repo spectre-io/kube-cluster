@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: wallabag-configmap
 data:
-  SYMFONY__ENV__DOMAIN_NAME: http://localhost:7676
+  SYMFONY__ENV__DOMAIN_NAME: http://localhost
