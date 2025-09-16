@@ -16,7 +16,7 @@ spec:
         - image: wallabag/wallabag:2.6.13
           name: wallabag
           ports: 
-            - containerPort: 7676
+            - containerPort: 6002
 
           envFrom:
              - configMapRef:
