@@ -3,8 +3,11 @@ kind: Service
 metadata:
   name: wallabag
 spec:
-  type: ClusterIP
   ports:
-    - port: 7676
+    - protocol: TCP
+      port: 8083
+      targetPort: 80
+      name: http
   selector:
     app: wallabag
+  type: ClusterIP
