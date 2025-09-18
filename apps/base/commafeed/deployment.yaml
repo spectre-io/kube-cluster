@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: commafeed
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: commafeed
+
+  template:
+    metadata:
+      labels:
+        app: commafeed
+
+    spec:
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 3000
+        fsGroup: 2000
+
+      containers:
+        - image: athou/commafeed:5.11.0
+          name: commafeed
+
+          securityContext:
+            allowPrivilegeEscalation: false
+
+          envFrom:
+            - configMapRef:
+                name: commafeed-configmap
+
+          ports:
+            - containerPort: 8082
+              protocol: TCP
+
+          volumeMounts:
+            - mountPath: /commafeed/data
+              name: commafeed-data
+
+      restartPolicy: Always
+
+      volumes:
+        - name: commafeed-data
+          persistentVolumeClaim:
+            claimName: commafeed-data-pvc
