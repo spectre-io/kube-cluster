@@ -20,7 +20,7 @@ spec:
         fsGroup: 2000
 
       containers:
-        - image: athou/commafeed:5.11.0
+        - image: athou/commafeed:5.11.0-h2
           name: commafeed
 
           securityContext:
