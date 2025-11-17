@@ -3,7 +3,6 @@
 *.enc.yml
 
 # Flux-specific
-flux-system/
 .kustomize-build/
 
 # SOPS temporary files
