@@ -1,0 +1,45 @@
+# Kubernetes manifests
+*.secret.yaml
+*.secret.yml
+*.enc.yaml
+*.enc.yml
+
+# Flux-specific
+flux-system/
+.kustomize-build/
+
+# SOPS temporary files
+*.agekey
+*.sops.yaml
+*.sops.yml
+
+# Certificates (Cloudflare or TLS)
+*.crt
+*.key
+*.pem
+
+# Kubeconfig
+.kube/
+kubeconfig*
+
+# Helm (if used)
+charts/
+*.tgz
+
+# Local cluster artifacts (k3s)
+.k3s/
+.k3d/
+.k3sup/
+
+# Docker
+*.tar
+
+# IDE and OS
+.idea/
+.vscode/
+*.DS_Store
+*.swp
+
+# Logs and temp
+*.log
+tmp/
