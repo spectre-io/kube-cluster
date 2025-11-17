@@ -1,6 +1,4 @@
 # Kubernetes manifests
-*.secret.yaml
-*.secret.yml
 *.enc.yaml
 *.enc.yml
 
