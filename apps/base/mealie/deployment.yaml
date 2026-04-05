@@ -16,6 +16,12 @@ spec:
       containers:
       - image: mealie-recipes/mealie:3.14.0
         name: mealie
+        ports:
+          - containerPort: 9000
+
+    volumeMounts:
+      - mountPath: /etc/mealie/data
+        name: mealie-data
 
     restartPolicy: Always
 
