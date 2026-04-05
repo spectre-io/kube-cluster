@@ -20,7 +20,7 @@ spec:
           - containerPort: 9000
 
     volumeMounts:
-      - mountPath: /etc/mealie/data
+      - mountPath: /app/data/
         name: mealie-data
 
     restartPolicy: Always
