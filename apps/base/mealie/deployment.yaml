@@ -19,13 +19,13 @@ spec:
         ports:
           - containerPort: 9000
 
-    volumeMounts:
-      - mountPath: /app/data/
-        name: mealie-data
+        volumeMounts:
+          - mountPath: /app/data/
+            name: mealie-data
 
-    restartPolicy: Always
+      restartPolicy: Always
 
-    volumes:
-      - name: mealie-data
-        persistentVolumeClaim:
-          claimName: mealie-data-pvc
+      volumes:
+        - name: mealie-data
+          persistentVolumeClaim:
+            claimName: mealie-data-pvc
