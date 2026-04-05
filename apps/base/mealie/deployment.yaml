@@ -14,7 +14,7 @@ spec:
         app: mealie
     spec:
       containers:
-      - image: hkotel/mealie:3.14.0
+      - image: hkotel/mealie:v3.14.0
         name: mealie
         ports:
           - containerPort: 9000
