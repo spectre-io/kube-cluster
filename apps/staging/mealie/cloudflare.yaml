@@ -77,7 +77,7 @@ data:
     no-autoupdate: true
 
     ingress:
-    - hostname: meals.kerrbo.cloud
+      - hostname: meals.kerrbo.cloud
       service: http://mealie:9000
 
     # This rule sends traffic to the built-in hello-world HTTP server. This can help debug connectivity
