@@ -3,6 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: wallabag-data-pvc
 spec:
+  storageClassName: longhorn
   accessModes:
     - ReadWriteOnce
   resources:
@@ -14,6 +15,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: wallabag-images-pvc
 spec:
+  storageClassName: longhorn
   accessModes:
     - ReadWriteOnce
   resources:
