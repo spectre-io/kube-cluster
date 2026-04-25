@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: longhorn
@@ -8,12 +8,17 @@ spec:
   chart:
     spec:
       chart: longhorn
-      version: "1.7.2"
+      version: "1.7.x"
       sourceRef:
         kind: HelmRepository
         name: longhorn
         namespace: flux-system
-  installCRDs: true
+  install:
+    crds: Create
+  upgrade:
+    crds: CreateReplace
+  driftDetection:
+    mode: enabled
   values:
     defaultSettings:
       defaultReplicaCount: 2                  # Perfect for 2 nodes
