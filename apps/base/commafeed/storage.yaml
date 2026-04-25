@@ -3,6 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: commafeed-data-pvc
 spec:
+  storageClassName: longhorn
   accessModes:
     - ReadWriteOnce
   resources:
