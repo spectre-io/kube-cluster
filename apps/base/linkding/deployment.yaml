@@ -24,11 +24,11 @@ spec:
             - secretRef:
                 name: linkding-container-env
 
-          securityContext:
-            fsGroup: 33
-            runAsUser: 33
-            runAsGroup: 33
-            allowPrivilegeEscalation: false
+          #securityContext:
+            #fsGroup: 33
+            #runAsUser: 33
+            #runAsGroup: 33
+            #allowPrivilegeEscalation: false
 
           volumeMounts:
             - mountPath: /etc/linkding/data
