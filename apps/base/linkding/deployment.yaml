@@ -19,16 +19,43 @@ spec:
             - containerPort: 9090
 
           envFrom:
-            # - configMapRef:
-            #     name: linkding-configmap
             - secretRef:
                 name: linkding-container-env
 
-          securityContext:
-            fsGroup: 33
-            runAsUser: 33
-            runAsGroup: 33
-            allowPrivilegeEscalation: false
+          env:
+            - name: LD_DB_ENGINE
+              value: postgres
+            - name: LD_DB_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: linkding-app
+                  key: host
+            - name: LD_DB_PORT
+              valueFrom:
+                secretKeyRef:
+                  name: linkding-app
+                  key: port
+            - name: LD_DB_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: linkding-app
+                  key: dbname
+            - name: LD_DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: linkding-app
+                  key: username
+            - name: LD_DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: linkding-app
+                  key: password
+
+          #securityContext:
+           # fsGroup: 33
+            #runAsUser: 33
+            #runAsGroup: 33
+            #allowPrivilegeEscalation: false
 
           volumeMounts:
             - mountPath: /etc/linkding/data
