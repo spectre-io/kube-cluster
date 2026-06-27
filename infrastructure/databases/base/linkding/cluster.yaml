@@ -4,7 +4,7 @@ metadata:
   name: linkding
   namespace: linkding
 spec:
-  instances: 3
+  instances: 2
   storage:
     storageClass: longhorn
     size: 1Gi
